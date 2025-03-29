@@ -91,7 +91,7 @@ def create_user(
         ]:
 
             # Generate alias email using first name and last initial
-            alias_email = f"{firstname.lower()}{lastname[0].lower()}@EMAIL.com"
+            alias_email = f"{firstname.lower()}{lastname[0].lower()}@email.com"
 
             # Execute GAM command to create alias email
             gamcreatealias = f"{gam_path}gam create alias {alias_email} user {email}"
