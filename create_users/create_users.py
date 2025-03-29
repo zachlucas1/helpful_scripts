@@ -40,7 +40,7 @@ def create_user(
 ):
 
     """Function that creates users in JumpCloud and Google Admin"""
-    password = "Red123!@#"
+    password = "PASSWORD"
     payload = {
         "activated": True,
         "displayname": displayname,
@@ -124,7 +124,7 @@ def main():
     # Extract first name, last name, email, and username
     first_names = [name.split(' ')[0] for name in names]
     last_names = [name.split()[-1] for name in names]
-    emails = [name.lower().replace(' ', '.') + '@arivo.com' for name in names]
+    emails = [name.lower().replace(' ', '.') + '@email.com' for name in names]
     usernames = [email.split('@')[0] for email in emails]
 
     url = "https://console.jumpcloud.com/api/systemusers"
@@ -136,7 +136,7 @@ def main():
 
         # Fetch Google Groups from GigaMatrix and format them
         google_groups = giga_matrix.col_values(5)[1:]
-        google_groups = [group.lower().replace(' ', '') + '@arivo.com' for group in google_groups]
+        google_groups = [group.lower().replace(' ', '') + '@email.com' for group in google_groups]
 
         # Executes the function
         create_user(
